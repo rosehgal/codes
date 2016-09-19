@@ -14,9 +14,10 @@ int length_max_inc_subseq(vector<int> arr)
                 val=maxseq[j]+1;
         maxseq.push_back(val);
     }
-    for(auto a:maxseq)
+    //to check if the max seq array working fine or not
+    /*for(auto a:maxseq)
         cout<<a<<" ";
-
+    */
     return maxseq[arr.size()-1];
 }
 
