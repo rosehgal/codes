@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
 int longest_palindrome_sequence(string str)
 {
     vector<vector<int> > palin_mat(str.size());
@@ -10,8 +9,8 @@ int longest_palindrome_sequence(string str)
 
     cout<<"roht\n";
 
-    for(int i=str.size()-1;i>=0;--i)
-        for(int j=str.size()-1;j>=str.size()-1-i;--j)
+    for(int k=0;k<str.size();++k)
+        for(int i=0,j=k;i<str.size()&&j<str.size();++i,++j)
             if(i==j)
                 palin_mat[i][j]=1;
             else if(str[i]==str[j])
