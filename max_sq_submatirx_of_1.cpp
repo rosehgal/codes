@@ -18,14 +18,18 @@ int max_sq_submatix_of_one(vector<vector<int> >mat)
     for(int i=1;i<mat.size();++i)
         for(int j=1;j<mat[0].size();++j)
         {
-            if(mat[i-1][j] && mat[i][j-1] && mat[i-1][j-1])
-                mat[i][j]=min(min(mat[i-1][j],mat[i][j-1]),mat[i-1][j-1])+1;
-            else
-                mat[i][j]=0;
-            if(largest<mat[i][j])
-                largest=mat[i][j];
+            if(mat[i][j])
+                ones[i][j]=min(min(ones[i-1][j],ones[i][j-1]),ones[i-1][j-1])+1;
+            if(largest<ones[i][j])
+                largest=ones[i][j];
         }
 
+    for(auto &x:ones)
+    {
+        for(auto &y:x)
+            cout<<y<<"\t";
+        cout<<endl;
+    }
     return largest;
 }
 
