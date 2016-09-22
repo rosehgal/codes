@@ -9,39 +9,24 @@ int chain_matrix_multipilcation(vector<int> mat)
     for(int i=0;i<cmm.size();++i)
         cmm[i].resize(mat.size());
 
-    for(int s=1;s<cmm.size();++s)
+    for(int s=0;s<cmm.size()-1;++s)
     {
-        cout<<"check0\n";
         for(int i=1,j=s+1;i<cmm.size() && j<cmm.size();++i,++j)
         {
-            int product=-1;
-            for(int k=i+1;k<=j;++k)
+            int product=0;
+            for(int k=i;k<j;++k)
             {
                 int temp = cmm[i][k]+cmm[k+1][j]+mat[i-1]*mat[k]*mat[j];
-                if(product==-1)
+                if(product==0)
                     product=cmm[i][k]+cmm[k+1][j]+mat[i-1]*mat[k]*mat[j];
                 else if(temp<product)
                     product=temp;
             }
             cmm[i][j]=product;
-
-            for(auto &v:cmm)
-            {
-                for(auto &x:v)
-                    cout<<x<<"\t";
-                cout<<"\n";
-            }
         }
     }
-    cout<<"check1\n";
-    for(auto &v:cmm)
-    {
-        for(auto &x:v)
-            cout<<x<<"\t";
-        cout<<"\n";
-    }
-    cout<<"check2";
-    return cmm[0][cmm.size()-1];
+
+    return cmm[1][cmm.size()-1];
 }
 
 
