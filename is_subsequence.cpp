@@ -1,6 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <string>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -9,7 +7,7 @@ struct elem{
     int dir;
 };
 
-string length_of_LCS(string a,string b)
+bool LCS(string a,string b)
 {
     elem **mat = new elem*[a.size()+1];
     for(int i=0;i<=a.size();++i)
@@ -67,14 +65,17 @@ string length_of_LCS(string a,string b)
             i--;j--;
         }
     }
-    return lcs;
+    if(a==lcs)
+        return true;
+    else
+        return false;
 }
 
 
 int main()
 {
-    string a="olo", b="mola";
-    cout<<length_of_LCS(a,b);
+    string a,b;
+    cin>>a>>b;
+    cout<<LCS(a,b);
     return 0;
-
 }
