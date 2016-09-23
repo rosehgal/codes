@@ -9,9 +9,14 @@ GraphNode* getNode(int n)
 }
 
 
+enum color{
+    white,grey,black
+};
+
 struct GraphNode
 {
     int node;
+    color nodeColor;
     GraphNode *next;
 };
 
@@ -28,6 +33,11 @@ public:
         adj_list =  new GraphNode[nodes];
         for(int i=0;i<nodes;++i)
             adj_list[i]=NULL;
+    }
+
+    color nodeColor(int u)
+    {
+        return adj_list[u]->nodeColor;
     }
 
     void add_edge(int u,int v)
