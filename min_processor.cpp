@@ -4,11 +4,6 @@ using namespace std;
 int processor_required(vector<pair<int,int>> process)
 {
     sort(process.begin(),process.end());
-
-    for(auto v : process)
-        cout<<v.first<<" "<<v.second<<endl;
-    cout<<"\n";
-
     int processor_count=0;
     vector<pair<int,int> > processor;
 
@@ -29,10 +24,10 @@ int processor_required(vector<pair<int,int>> process)
 
         if(processor.size()>processor_count)
             processor_count=processor.size();
-
-        for(auto v : processor)
-            cout<<v.first<<" "<<v.second<<endl;
-        cout<<"\n";
+        //
+        // for(auto v : processor)
+        //     cout<<v.first<<" "<<v.second<<endl;
+        // cout<<"\n";
     }
     return processor_count;
 }
