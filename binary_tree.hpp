@@ -58,6 +58,15 @@ BinaryTree<int> * sample_binary_tree()
     return root;
 }
 
+template<typename type>
+int height(BinaryTree<type> *root)
+{
+    if(!root)
+        return 0;
+    else
+        return max(height(root->left),height(root->right))+1;
+}
+
 // template<typename type>
 // void insert_arr_to_tree(BinaryTree* &root,vector<type> arr)
 // {
