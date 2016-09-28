@@ -22,6 +22,7 @@ void wiggleSort(vector<int>& nums)
 
 int main()
 {
+    
     vector<int> arr{4,5,6,7,8,9,10};
     wiggleSort(arr);
     for(auto &a:arr)
