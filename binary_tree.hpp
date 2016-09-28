@@ -65,11 +65,14 @@ BinaryTree<char> * sample_binary_tree_char()
     insert(root->right,'a');
     insert(root->left->left,'c');
     insert(root->left->right,'a');
+    insert(root->left->right->right,'c');
     insert(root->left->left->left,'a');
     insert(root->left->right->left,'b');
     insert(root->left->right->left->right,'a');
     insert(root->left->right->left->right->left,'c');
 
+    insert(root->right->left,'b');
+    insert(root->right->left->left,'c');
     insert(root->right->right,'b');
     insert(root->right->right->left,'a');
     insert(root->right->right->right,'b');
