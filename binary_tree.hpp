@@ -25,8 +25,6 @@ void insert(BinaryTree<type> * &root,type data)
 {
     if(!root)
         root=get_node(data);
-    else
-        return ;
 }
 
 template<typename type>
@@ -55,6 +53,28 @@ BinaryTree<int> * sample_binary_tree()
     insert(root->right->left,5);
     insert(root->right->right,7);
     insert(root->right->left->left,1);
+    return root;
+}
+
+
+BinaryTree<char> * sample_binary_tree_char()
+{
+    BinaryTree<char> *root = NULL;
+    insert(root,'a');
+    insert(root->left,'b');
+    insert(root->right,'a');
+    insert(root->left->left,'c');
+    insert(root->left->right,'a');
+    insert(root->left->left->left,'a');
+    insert(root->left->right->left,'b');
+    insert(root->left->right->left->right,'a');
+    insert(root->left->right->left->right->left,'c');
+
+    insert(root->right->right,'b');
+    insert(root->right->right->left,'a');
+    insert(root->right->right->right,'b');
+    insert(root->right->right->right->left,'c');
+
     return root;
 }
 
