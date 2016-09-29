@@ -3,27 +3,30 @@
 using namespace std;
 
 void wiggleSort(vector<int>& nums)
-{
-    vector<int> sorted = nums;
+ {
+     vector<int> sorted = nums;
 
-    sort(sorted.begin(),sorted.end());
+     sort(sorted.begin(),sorted.end());
 
-    int upper_limit = ceil((float)nums.size()/2),loc=0;
-    cout<<upper_limit<<endl;
-    for(int i=0;i<upper_limit;++i,loc+=2)
-        nums[loc]=sorted[i];
+     int upper_limit = ceil((float)nums.size()/2);//,loc=nums.size()-1;
+     cout<<upper_limit<<endl;
 
-    loc=1;
-    for(int i=upper_limit;i<nums.size();++i,loc+=2)
-        nums[loc]=sorted[i];
-}
-
+     int i=0,j=upper_limit,loc=nums.size()-1;
+     while(i<j && loc>=0)
+     {
+         if(loc%2==1)
+            nums[loc]=sorted[j++];
+        else
+            nums[loc]=sorted[i++];
+        loc--;
+     }
+ }
 
 
 int main()
 {
-    
-    vector<int> arr{4,5,6,7,8,9,10};
+
+    vector<int> arr{4,5,5,6};
     wiggleSort(arr);
     for(auto &a:arr)
         cout<<a<<" ";
