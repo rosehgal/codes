@@ -10,13 +10,7 @@ using namespace std;
 int min_penlaty(vector<int> a,vector<int> b,int k,int shift_penalty)
 {
     vector<pair<int,char> > penalty(a.size(),pair<int,char>(INT_MAX,'a'));
-    char current ;
-    if(a[0]<b[0])
-        penalty[0]=pair<int,char>(a[0],'a');
-
-    else
-        penalty[0]=pair<int,char>(b[0],'b');
-
+    penalty[0]=pair<int,char>(a[0],'a');
     for(int i=1;i<a.size();++i)
     {
         if(penalty[i-1].second=='a')
@@ -47,9 +41,9 @@ int min_penlaty(vector<int> a,vector<int> b,int k,int shift_penalty)
 
 int main()
 {
-    vector<int> a{1,2,3,4},b{4,3,2,1};
+    vector<int> a{1,20,20,20,20},b{10,1,1,1,1};
     int k,shift_penalty;
     cin>>k>>shift_penalty;
-    cout<<min_penlaty(a,b,k,shift_penalty);
+    cout<<min(min_penlaty(a,b,k,shift_penalty),min_penlaty(b,a,k,shift_penalty));
     return 0;
 }
