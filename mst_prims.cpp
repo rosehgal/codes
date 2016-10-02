@@ -12,8 +12,10 @@ int mst_prims(list<pair<int,int> > * &g,int nodes)
 {
     priority_queue<pair<int,int>, vector<pair<int,int> >, greater<pair<int,int> > > pq;
     int src=0;
-    vector<int> dist(nodes+1,INT_MAX);
-    vector<bool> visited(nodes+1);
+
+    vector<int> dist(nodes,INT_MAX);
+    vector<bool> visited(nodes);
+
     pq.push({0,src});
     dist[src]=0;
     int mst = 0;
@@ -26,13 +28,15 @@ int mst_prims(list<pair<int,int> > * &g,int nodes)
         for(auto v:g[u])
             if(!visited[v.first] && dist[v.first] > v.second)
             {
-                dist[v.first] = v.first;
+                dist[v.first] = v.second;
                 pq.push({v.second,v.first});
             }
     }
     for(auto a:dist)
-        if(a!=INT_MAX)
-            mst+=a;
+    {
+        cout<<a<<" ";
+        mst+=a;
+    }
     return mst;
 }
 
