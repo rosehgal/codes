@@ -22,7 +22,6 @@ void compute_division(list<pair<int,float> >* &g,int nodes,int src,list<pair<int
         int u = p.first;
         float wt = p.second;
         visited[u]=black;
-        cout<<u<<endl;
         for(auto v:g[u])
         {
             if(visited[v.first]==white)
@@ -77,7 +76,7 @@ int main()
             result=u.second;
             break;
         }
-        
+
     cout<<result;
     return 0;
 }
