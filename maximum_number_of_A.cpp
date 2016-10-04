@@ -18,8 +18,8 @@ int max_A(int n)
         number[i]=max(m,number[i-1]+1);
     }
 
-    for(auto a:number)
-        cout<<a<<"\t";
+    // for(auto a:number)
+    //     cout<<a<<"\t";
     return number[n];
 }
 
