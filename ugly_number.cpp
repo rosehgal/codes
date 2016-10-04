@@ -25,6 +25,7 @@ int ugly_number(int n)
             id5++;
         ugly.push_back(next_ugly);
     }
+    
     return ugly.back();
 }
 
