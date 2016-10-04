@@ -42,7 +42,7 @@ int main()
     in>>n;
     in>>m;
 
-    cout<<n<<m<<endl;
+    //cout<<n<<m<<endl;
     list<pair<int,float> > *g = new list<pair<int,float> >[n];
     list<pair<int,float> > *prod_graph,*result_graph;
     prod_graph=new list<pair<int,float> >[n];
@@ -53,7 +53,7 @@ int main()
         char a,b;
         float wt;
         in>>a>>b>>wt;
-        cout<<a<<b<<wt<<endl;
+        //cout<<a<<b<<wt<<endl;
         addEdge(g,a-'a',b-'a',wt);
     }
 
