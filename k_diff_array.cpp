@@ -11,18 +11,11 @@ int kth_diff(vector<int> arr,int k)
 
     int count=0;
     for(auto x:arr)
-    {
-        // if(map[x-k]==1)
-        // {
-        //     cout<<"("<<x<<","<<x-k<<")"<<endl;
-        //     count++;
-        // }
         if(map[x+k]==1)
         {
             cout<<"("<<x<<","<<x+k<<")"<<endl;
             count++;
         }
-    }
     return count;
 }
 
