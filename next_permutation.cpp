@@ -9,7 +9,7 @@ string next_perm(string a)
         {
             int j;
             bool done=false;
-            for(j=i+1;j<a.size();++j)
+            for(j=a.size()-1;j>=i+1;--j)
                 if(a[j]>a[i])
                 {
                     swap(a[j],a[i]);
