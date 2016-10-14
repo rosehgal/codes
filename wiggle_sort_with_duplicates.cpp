@@ -5,12 +5,8 @@ using namespace std;
 void wiggleSort(vector<int>& nums)
  {
      vector<int> sorted = nums;
-
      sort(sorted.begin(),sorted.end());
-
-     int upper_limit = ceil((float)nums.size()/2);//,loc=nums.size()-1;
-     cout<<upper_limit<<endl;
-
+     int upper_limit = ceil((float)nums.size()/2);
      int i=0,j=upper_limit,loc=nums.size()-1;
      while(i<j && loc>=0)
      {
