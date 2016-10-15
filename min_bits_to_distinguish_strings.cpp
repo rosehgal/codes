@@ -36,7 +36,7 @@ bool isValid(vector<string> subseq){
 }
 
 int min_bits_differ(vector<string> strings){
-    int lower = ceil(log(strings.size())),upper=strings.size()-1;
+    int lower = ceil(log2(strings.size())),upper=strings.size()-1;
     vector<string> prefix(strings.size(),"");
     for(int i=lower;i<=upper;++i){
         vector<vector<string>> subseqs;
