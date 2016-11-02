@@ -10,27 +10,21 @@ struct mycomp{
 int min_path(list<pair<int,int> > *g, int nodes=101)
 {
     priority_queue<pair<int,int>, vector<pair<int,int> >, mycomp> pq;
-
     vector<int> dist(nodes,INT_MAX);
     vector<bool> visited(nodes,false);
-
     int src=1;
     dist[src]=0;
     pq.push({src,0});
-    while(!pq.empty())
-    {
+    while(!pq.empty()){
         pair<int,int> vertex=pq.top();
         int u = vertex.first,wt=vertex.second;
         visited[u]=true;
         pq.pop();
         for(auto v:g[u])
-        {
-            if(!visited[v.first]  && dist[v.first] > wt+v.second)
-            {
+            if(!visited[v.first]  && dist[v.first] > wt+v.second){
                 dist[v.first] = wt+v.second;
                 pq.push({v.first,dist[v.first]});
             }
-        }
     }
     return dist[100]==INT_MAX?-1:dist[100];
 }
